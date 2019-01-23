@@ -23,5 +23,13 @@
   "bugs": {
     "url": "https://github.com/antoniotex/SmartStock/issues"
   },
-  "homepage": "https://github.com/antoniotex/SmartStock#readme"
+  "homepage": "https://github.com/antoniotex/SmartStock#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.4.6"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.18.9"
+  }
 }
