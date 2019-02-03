@@ -5,14 +5,18 @@ const bodyParser = require('body-parser')
 const app = express()
 const port = process.env.PORT || 5000;
 
+// Configura DB
 const db = require('./config/keys').mongoURI
 
+// Bodyparser Middleware
 app.use(bodyParser.json())
 
+// Conexão com o MongoDB
 mongoose.connect(db, { useNewUrlParser: true })
   .then(() => console.log('MongoDB Conectado'))
   .catch(erro => console.log(erro))
 
+// Lança servidor
 app.listen(port, () => {
     console.log(`Servidor rodando na porta ${port}`)
 })
