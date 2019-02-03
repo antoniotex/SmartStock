@@ -3,16 +3,14 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const produtos = require('./routes/produtos')
 
-const app = express()
+const app = express()// Bodyparser Middleware
+app.use(bodyParser.json())
 const port = process.env.PORT || 5000;
 
 app.use('/api/produtos', produtos)
 
 // Configura DB
 const db = require('./config/keys').mongoURI
-
-// Bodyparser Middleware
-app.use(bodyParser.json())
 
 // Conexão com o MongoDB
 mongoose.connect(db, { useNewUrlParser: true })
